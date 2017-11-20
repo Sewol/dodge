@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Dodge</title>
+		<script type="text/javascript" src="dodge.js"></script>
+		<script type="text/javascript" src="player.js"></script>
+		<script type="text/javascript" src="bullet.js"></script>
+		<script type="text/javascript" src="wave.js"></script>
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+	</head>
+	<body onload="init();" onkeydown="get_key_down(event);" onkeyup="get_key_up(event);" onmousemove="get_mouse(event);" onscroll="get_screen_scroll()">
+		<div align="center">
+			<canvas id="canvas" onclick="get_click(event);">
+	      Sorry, but your browser doesn't support the HTML 5 Canvas tag.<br />
+	      The latest versions of Firefox, Safari, Opera, and Google Chrome are all excellent choices.
+	  		</canvas>
+	  	</div>
+	    <noscript>JavaScript must be enabled to play this game.</noscript>
+	</body>
+</html>
+<style>
+	html {
+		background-color: #333;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	body, body>div {
+		width: 100%;
+		height: 100%;
+	}
+	canvas {
+		background-color: #aaa;
+		cursor: pointer;
+		/*max-width: 400px;*/
+		/*max-height: 800px;*/
+
+		/*width: 100%;*/
+		/*height: 100%;*/
+	}
+</style>
