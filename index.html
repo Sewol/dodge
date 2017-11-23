@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" id="html">
 	<head>
     	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>Dodge</title>
 		<script type="text/javascript" src="dodge.js"></script>
 		<script type="text/javascript" src="player.js"></script>
@@ -11,7 +12,7 @@
 	</head>
 	<body onload="init();" onkeydown="get_key_down(event);" onkeyup="get_key_up(event);" onmousemove="get_mouse(event);" onscroll="get_screen_scroll()">
 		<div align="center">
-			<canvas id="canvas" onclick="get_click(event);">
+			<canvas id="canvas" onmousedown="get_click(event);">
 	      Sorry, but your browser doesn't support the HTML 5 Canvas tag.<br />
 	      The latest versions of Firefox, Safari, Opera, and Google Chrome are all excellent choices.
 	  		</canvas>
@@ -29,14 +30,20 @@
 	body, body>div {
 		width: 100%;
 		height: 100%;
+		margin: 0;
 	}
 	canvas {
 		background-color: #aaa;
 		cursor: pointer;
 		/*max-width: 400px;*/
 		/*max-height: 800px;*/
-
-		/*width: 100%;*/
-		/*height: 100%;*/
+		-webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    /* Chrome on Android */
+	    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	}
 </style>

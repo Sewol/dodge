@@ -17,10 +17,13 @@ var dead_waves = new Array;
 
 function init() {
 	canvas = document.getElementById('canvas');
+	html = document.getElementById('html');
 	ctx = canvas.getContext('2d');
 	
-	ctx.canvas.width = 400;
-	ctx.canvas.height = 800;
+	// ctx.canvas.width = 400;
+	// ctx.canvas.height = 800;
+	ctx.canvas.width = html.clientWidth;
+	ctx.canvas.height = html.clientHeight;
 
 	var mid_x = canvas.width/2;
 	var mid_y = canvas.height/2;

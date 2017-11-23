@@ -25,7 +25,9 @@ Wave.prototype.fire = function() {
 		var px_d = (px > this.x ? 1 : -1);
 		var py_d = (py > this.y ? 1 : -1);
 		Bullets.push(new Bullet(this.x, this.y,  px, py)); // directly at the player
-		Bullets.push(new Bullet(this.x, this.y,  (px + 10) * px_d, py));
-		Bullets.push(new Bullet(this.x, this.y,  (px - 10) * px_d, py));
+		Bullets.push(new Bullet(this.x, this.y,  px + 40, py));
+		Bullets.push(new Bullet(this.x, this.y,  px, py + 40));
+		Bullets.push(new Bullet(this.x, this.y,  px - 40, py));
+		Bullets.push(new Bullet(this.x, this.y,  px, py - 40));
 	}
 }
