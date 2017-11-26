@@ -1,5 +1,5 @@
 
-function Bullet (x, y, target_x, target_y) {
+function Bullet(x, y, target_x, target_y) {
 	this.half_width = 8;
 	this.half_height = 8;
 	this.x = x;
@@ -23,13 +23,14 @@ Bullet.prototype.update = function () {
 	this.x = Math.floor(this.x + this.vx);
 	this.y = Math.floor(this.y + this.vy);
 	//
-	if (Math.abs(this.x - Players[0].x) <= 3 && Math.abs(this.y - Players[0].y) <= 3) { // if we've hit the player
+	//if (Math.abs(this.x - Players[0].x) <= 3 && Math.abs(this.y - Players[0].y) <= 3) { // if we've hit the player
 		//
 		// returns 2 ?
-	}
+	//}
 	if (this.x > ctx.canvas.width || this.x < 0 || this.y > ctx.canvas.height || this.y < 0) { // out of bounds check
 		return 1;
 	}
+	return 0; // all good
 }
 
 Bullet.prototype.draw = function () {

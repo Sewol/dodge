@@ -12,6 +12,8 @@ function Player(x, y) {
 	this.target_x = 0;
 	this.target_y = 0;
 	//
+	this.is_alive = true;
+	//
 	this.move_speed = 12;
 	this.dir = 1; // facing, 1 for right, -1 for left
 }
@@ -66,15 +68,19 @@ function get_screen_scroll() {
 }
 function get_click(event) {
 	// console.log(event);
-	Players[0].moving = true;
-	Players[0].target_x = event.clientX - canvas.offsetLeft;
-	Players[0].target_y = event.clientY - canvas.offsetTop;
-	
-	// set player facing
-	if (Players[0].target_x < Players[0].x) {
-		Players[0].dir = -1; // moving left
-	} else if (Players[0].target_x > Players[0].x) {
-		Players[0].dir = 1; // moving right
+	if (Players[0].is_alive == false) {
+		if (dead_seconds - seconds > 1) game_reset(); // click resets game if dead (and 1 second passed)
+	} else {
+		Players[0].moving = true;
+		Players[0].target_x = event.clientX - canvas.offsetLeft;
+		Players[0].target_y = event.clientY - canvas.offsetTop;
+		
+		// set player facing
+		if (Players[0].target_x < Players[0].x) {
+			Players[0].dir = -1; // moving left
+		} else if (Players[0].target_x > Players[0].x) {
+			Players[0].dir = 1; // moving right
+		}
 	}
 	//
 }
